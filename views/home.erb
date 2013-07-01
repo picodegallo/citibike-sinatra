@@ -1,1 +1,8 @@
-<%= @data.inspect %>
+<ol>
+<% @data.each do |hash| %>
+  <li>
+    Station: <%= hash["name"] %>
+    LAT: <%= hash["lat"] %> LONG: <%= hash["lng"] %>
+  </li>
+<% end %>
+</ol>

@@ -1,0 +1,25 @@
+<form action="/map" method="POST">
+
+<h1>My Map Route:</h1>
+<hr>
+  
+<label for="start">Start: </label> 
+<select name="start">
+  <% @data.each do |hash| %>
+  <% @coordinates_array = [ hash["lat"]/1000000.to_f, hash["lng"]/1000000.to_f ] %>
+  <option value="<%= @coordinates_array %>"> <%= hash["name"] %> </option>
+  <% end %>
+</select>
+
+<label for="end">End: </label> 
+<select name="end">
+  <% @data.each do |hash| %>
+  <% @coordinates_array = [hash["lat"]/1000000.to_f, hash["lng"]/1000000.to_f] %>
+  <option value="<%= @coordinates_array %>"> <%= hash["name"] %> </option>
+  <% end %>
+</select>
+<br>
+<hr>
+<input type="submit" value="Enter">
+
+</form>
